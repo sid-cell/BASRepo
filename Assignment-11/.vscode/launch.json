@@ -1,117 +1,117 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Start assinment1",
-            "type": "node",
-            "request": "launch",
-            "runtimeExecutable": "npx",
-            "cwd": "${workspaceFolder}/assinment1",
-            "windows": {
-                "runtimeExecutable": "npx.cmd"
-            },
-            "runtimeArgs": [
-                "fiori",
-                "run"
-            ],
-            "args": [
-                "--open",
-                "test/flpSandbox.html?sap-ui-xx-viewCache=false#assinment1-display"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "DEBUG": "--inspect",
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/Assignment-11/assinment1\"}"
-            }
-        },
-        {
-            "name": "Start assinment1 Local",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/assinment1",
-            "runtimeExecutable": "npx",
-            "windows": {
-                "runtimeExecutable": "npx.cmd"
-            },
-            "runtimeArgs": [
-                "fiori",
-                "run"
-            ],
-            "args": [
-                "--config",
-                "./ui5-local.yaml",
-                "--open",
-                "test/flpSandbox.html?sap-ui-xx-viewCache=false#assinment1-display"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/Assignment-11/assinment1\"}"
-            }
-        },
-        {
-            "name": "Start assignment2",
-            "type": "node",
-            "request": "launch",
-            "runtimeExecutable": "npx",
-            "cwd": "${workspaceFolder}/assignment2",
-            "windows": {
-                "runtimeExecutable": "npx.cmd"
-            },
-            "runtimeArgs": [
-                "fiori",
-                "run"
-            ],
-            "args": [
-                "--open",
-                "test/flpSandbox.html?sap-ui-xx-viewCache=false#assignment2-display"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "DEBUG": "--inspect",
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/Assignment-11/assignment2\"}"
-            }
-        },
-        {
-            "name": "Start assignment2 Local",
-            "type": "node",
-            "request": "launch",
-            "cwd": "${workspaceFolder}/assignment2",
-            "runtimeExecutable": "npx",
-            "windows": {
-                "runtimeExecutable": "npx.cmd"
-            },
-            "runtimeArgs": [
-                "fiori",
-                "run"
-            ],
-            "args": [
-                "--config",
-                "./ui5-local.yaml",
-                "--open",
-                "test/flpSandbox.html?sap-ui-xx-viewCache=false#assignment2-display"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "port": 9229,
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/Assignment-11/assignment2\"}"
-            }
-        }
-    ],
-    "inputs": [
-        {
-            "id": "UI5MinVersion1.65.0",
-            "type": "command",
-            "command": "sap.ux.appGenerator.ui5Version",
-            "args": {
-                "minUI5Version": "1.65.0"
-            }
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Start assinment1",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "cwd": "${workspaceFolder}/assinment1",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "test/flpSandbox.html?sap-ui-xx-viewCache=false#assinment1-display"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/Assignment-11/assinment1\"}"
+      }
+    },
+    {
+      "name": "Start assinment1 Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/assinment1",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "test/flpSandbox.html?sap-ui-xx-viewCache=false#assinment1-display"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/Assignment-11/assinment1\"}"
+      }
+    },
+    {
+      "name": "Start assignment2",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "cwd": "${workspaceFolder}/assignment2",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "test/flpSandbox.html?sap-ui-xx-viewCache=false#assignment2-display"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/Assignment-11/assignment2\"}"
+      }
+    },
+    {
+      "name": "Start assignment2 Local",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/assignment2",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--config",
+        "./ui5-local.yaml",
+        "--open",
+        "test/flpSandbox.html?sap-ui-xx-viewCache=false#assignment2-display"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229,
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/Assignment-11/assignment2\"}"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "UI5MinVersion1.65.0",
+      "type": "command",
+      "command": "sap.ux.appGenerator.ui5Version",
+      "args": {
+        "minUI5Version": "1.65.0"
+      }
+    }
+  ]
 }
