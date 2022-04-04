@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form" >
+   <Dialog 
+      title="BOOKING DETAILS"  icon="sap-icon://information" >
+      <VBox >     	
+        <Text text="{localModel>/userdetails/username}" />
+        <Text text="{localModel>/userdetails/usercity}" />
+        <Text  text="{localModel>/userdetails/userCinema}"/>
+        <Text text="{localModel>/userdetails/tickets}" />
+        <Text text="{localModel>/userdetails/bookingDate}" />
+        <Text text="{localModel>/userdetails/movieTiming}" />
+      </VBox>
+
+   </Dialog>
+
+</core:FragmentDefinition>

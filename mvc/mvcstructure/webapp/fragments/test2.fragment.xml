@@ -1,0 +1,60 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core ="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:ui="sap.ui.table">
+   <OverflowToolbar >
+                    <ToolbarSpacer/>
+                    <SearchField search="onSearchTable" width="50%"  />
+                    <Button text="Add Row" press="addNewRow"/>
+                    </OverflowToolbar>
+                    <ui:Table id="myTable" rows="{data>/empDetails}" visibleRowCount="5">
+                    <ui:columns>
+                    <ui:Column >
+                    <Label text="Employee Name"></Label>
+                    <ui:template>
+                    <VBox >
+                    <Text text="{data>name}" visible="{=${data>edit}===true?false:true}"/>
+                    <Input id="nameInput" value="{data>name}" visible="{data>edit}"/>
+                    </VBox>
+                    </ui:template>
+                    </ui:Column>
+                    <ui:Column >
+                    <Label text="Employee ID"></Label>
+                    <ui:template>
+                    <VBox >
+                    <Text text="{data>empId}" visible="{=${data>edit}===true?false:true}"/>
+                    <Input id="idInput" value="{data>empId}" visible="{data>edit}"/>
+                    </VBox>
+                    </ui:template>
+                    </ui:Column>
+                    <ui:Column >
+                    <Label text="Employee Designation"></Label>
+                    <ui:template>
+                    <VBox >
+                    <Text text="{data>desn}" visible="{=${data>edit}===true?false:true}"/>
+                    <Input id="desnInput" value="{data>desn}" visible="{data>edit}"/>
+                    </VBox>
+                    </ui:template>
+                    </ui:Column>
+                    <ui:Column >
+                    <Label text="Date of Birth" ></Label>
+                    
+                    <ui:template>
+                    <VBox >
+                    <Text text="{path:'data>dob',formatter:'.formatter.dateFormat'}" visible="{=${data>edit}===true?false:true}"/>
+                    <Input id="dobInput" value="{data>dob}" visible="{data>edit}"/>
+                    </VBox>
+                    </ui:template>
+                    </ui:Column>
+                    <ui:Column >
+                    <Label text="Action"></Label>
+                    <ui:template>
+                    <VBox >
+                    <Button class="Reject" icon="sap-icon://delete" type="Reject" press="onDeleteRow"/>
+                    </VBox>
+                    </ui:template>
+                    </ui:Column>
+                    </ui:columns>
+                    </ui:Table>
+</core:FragmentDefinition>

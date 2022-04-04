@@ -1,0 +1,69 @@
+_schema-version: "3.2"
+ID: Assignment-11
+version: 0.0.1
+modules:
+- name: Assignment-11-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: Assignment-11-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - assinment1.zip
+      name: assinment1
+      target-path: resources/
+    - artifacts:
+      - assignment2.zip
+      name: assignment2
+      target-path: resources/
+- name: assinment1
+  type: html5
+  path: assinment1
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: assignment2
+  type: html5
+  path: assignment2
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: Assignment-11-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: Assignment-11-html5-srv
+    service-plan: app-host
+- name: Assignment-11-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: false
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: Assignment-11-destination-service
+    service-plan: lite
+parameters:
+  deploy_mode: html5-repo

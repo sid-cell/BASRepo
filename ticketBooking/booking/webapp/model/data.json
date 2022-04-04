@@ -1,0 +1,51 @@
+{
+    "movies":[{
+        "name":"Tiger",
+        "price":"200",
+        "desc":"Tiger and Vishnu's friendship is disrupted due to misunderstandings when Vishnu falls in love with Ganga. However, when Tiger learns that Vishnu and Ganga's life is in danger, he decides to help them."
+},
+{
+    "name":"Khiladi",
+    "price":"100",
+    "desc":"Khiladi is a 2022 Indian Telugu-language action thriller film written and directed by Ramesh Varma who co-produced it with Satyanarayana Koneru under A Studios. The film stars Ravi Teja alongside Arjun Sarja, Unni Mukundan, Meenakshi Chaudhary, and Dimple Hayathi."
+},
+{
+    "name":"Maraan",
+    "price":"500",
+    "desc":"Maaran is a 2022 Indian Tamil-language action thriller film written and directed by Karthick Naren, with the screenplay and dialogues were co-written by Suhas–Sharfu and Vivek. Produced by T. G"
+},
+{
+    "name":"Deep Water",
+    "price":"400",
+    "desc":"A well-to-do husband who allows his wife to have affairs in order to avoid a divorce becomes a prime suspect in the disappearance of her lovers."
+},
+{
+    "name":"Krish 3",
+    "price":"300",
+    "desc":"Krrish and his father must defeat human-animal mutants created by an evil genius, Kaal, who is hell-bent on destroying the world. His vile army is led by a chameleon mutant, Kaya."
+}],
+"tickets":[{
+    "name":"Tiger",
+    "key": "1"
+},
+{
+    "name":"Khiladi",
+    "key": "2"
+},
+
+{
+    "name":"Maraan",
+    "key": "3"
+},
+
+{
+    "name":"Deep Water",
+    "key": "4"
+},
+
+{
+    "name":"Krish 3",
+    "key": "5"
+
+}]
+}

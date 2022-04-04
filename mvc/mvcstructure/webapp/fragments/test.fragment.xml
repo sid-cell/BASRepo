@@ -1,0 +1,10 @@
+
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core" >
+   <Dialog
+      id="helloDialog"
+      title="Sample Dialog">
+        <Label text="this is a sample dialog"></Label>
+   </Dialog>
+</core:FragmentDefinition>

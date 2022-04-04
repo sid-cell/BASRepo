@@ -1,0 +1,28 @@
+<mvc:View
+    controllerName="week7.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content >
+                    
+                    <List id="prodList" items="{path:'/Products'}" >
+                    <items>
+                    <StandardListItem id="_IDGenStandardListItem1" title="{color}" description="{value}" ></StandardListItem>
+                    </items>
+                    </List>
+                    <List id="oData" items="{path:'/Employees'}">
+                    <items >
+                    <StandardListItem id="_IDGenStandardListItem2" title="{FirstName}" description="{Address}"></StandardListItem>
+                    </items>
+                    </List>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

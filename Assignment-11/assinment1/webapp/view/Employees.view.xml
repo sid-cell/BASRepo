@@ -1,0 +1,51 @@
+<mvc:View
+    controllerName="assinment1.controller.Employees"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                <subHeader>
+                    <Bar >
+                        <contentLeft>
+                            <SearchField search="handleSearch"></SearchField>
+                        </contentLeft>
+                    </Bar>
+                </subHeader>
+                    
+                        <List id="list" headerText="Employees at incture" backgroundDesign="Solid" items="{path:'empData>/EmployeeDetails'}" >
+                            <items>
+                                <!-- <CustomListItem press="showDetails" >
+                                    <HBox>
+                                        <core:Icon size="2rem" src="sap-icon://attachment-photo" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" />
+                                        <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
+                                            <Label text="{empData>Name}" design="Bold"/>
+                                            <Label text="{empData>Department}"/>
+                                        </VBox>
+                                        <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+                                            <Label text="Emergency Contact:{empData>AdditionalDetails/EmergencyContact/Name}"/>
+                                        </VBox>
+                                    </HBox>
+                                </CustomListItem> -->
+                                
+                                <ObjectListItem
+                                    title="{empData>Name}"
+                                    type="Active"
+                                    press="showDetails"
+                                   >
+                                    <ObjectAttribute text="{empData>Department}" />
+                                    <ObjectAttribute text="{empData>Gender}" />
+                                    <ObjectAttribute text="{empData>BaseLocation}"/>
+		                        </ObjectListItem>
+                            </items>
+                        </List>
+                    
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

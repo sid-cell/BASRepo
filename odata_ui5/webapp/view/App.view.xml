@@ -1,0 +1,29 @@
+<mvc:View
+    controllerName="ns.odataui5.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content>
+                    <HBox justifyContent="Center" >
+                        <List id="1" headerText="This is the list by binding odata in view" items="{/Employees}">
+                         <items>
+                            <StandardListItem id="emp" title="{EmployeeID}" description="{FirstName}" ></StandardListItem>
+                         </items>
+                        </List>
+                        <List id="2" headerText="This is the list by binding odata in controller" items="{localModel>/results}">
+                         <items>
+                            <StandardListItem id="cat" title="{localModel>CategoryName}" description="{localModel>Description}" ></StandardListItem>
+                         </items>
+                        </List>
+                        </HBox>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

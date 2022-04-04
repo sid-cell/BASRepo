@@ -1,0 +1,139 @@
+<mvc:View
+    controllerName="com.mvcstructure.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core ="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:ui="sap.ui.table"
+>
+    <!-- <Shell id="shell"> -->
+        <App id="app">
+            <pages>
+                <Page  title="{i18n>title}">
+                    <content>
+                    <l:Grid defaultSpan="XL3 L3 M6 S12" binding="{data>/details}" >
+                    <VBox class="sapUiSmallMargin">
+                    <Title text="Details" class="textStyle" ></Title>
+                    <Label  text="Name" ></Label>
+                    <Input id="name" placeholder="Enter Name"  value="{data>/details/name}" ></Input>
+                    <Input id="gender" placeholder="Gender"  value="{data>gender}" ></Input>
+                    </VBox>
+                    <VBox class="sapUiSmallMargin" >
+                    <Label  text="Gender" ></Label>
+                    <RadioButtonGroup columns="3" valueState="Error" id="radio-btn">
+                    <RadioButton text="Male" ></RadioButton>
+                    <RadioButton text="Female" ></RadioButton>
+                    <RadioButton text="Other" ></RadioButton>
+                    </RadioButtonGroup>
+                    </VBox>
+                    <VBox class="sapUiSmallMargin"
+                     >
+                     <Label text="{localModel>/localData}"/>
+                    </VBox>
+                    <VBox class="sapUiSmallMargin">
+
+
+                    <Label text="ID Available(Static Binding)"/>
+                    <ComboBox id="combo-box">
+                    <core:Item key="aadhar" text="abcdefg"/>
+                     <core:Item key="licence" text="LICENCEg"/>
+                      <core:Item key="pan" text="PAN"/>
+                    </ComboBox>
+
+
+                    <Label text="ID Available(Aggregation Binding)"/>
+                    <ComboBox id="combo-agr" items="{path:'data>/idArray'}" >
+                    <core:Item key="{data>key}" text="{data>text}"/>
+                     <!-- <core:Item key="licence" text="LICENCEg"/>
+                      <core:Item key="pan" text="PAN"/> -->
+                    </ComboBox>
+                    <Button enabled="{=${data>/details/status}==='Active'? true:false}" text="Submit" type="Emphasized" icon="sap-icon://accept" press="onPress"/>
+                    <Button text="Open Dialog" press="openDialog"/>
+                    </VBox>
+                    </l:Grid>
+                    <VBox class="sapUiSmallMargin" width="50%" >
+                    <List headerText="Employee Details" items="{path:'data>/empDetails'}" >
+                    <StandardListItem title="{data>name}" description="{data>empId}-->{data>desn}"></StandardListItem>
+                    </List>
+                    </VBox>
+
+
+                    <l:Grid defaultSpan="XL12 L12 M12 S12" >
+                    <!-- <OverflowToolbar >
+                    <ToolbarSpacer/>
+                    <SearchField search="onSearchTable" width="50%"  />
+                    <Button text="Add Row" press="addNewRow"/>
+                    </OverflowToolbar> -->
+                    <!-- <ui:Table id="myTable" rows="{data>/empDetails}" visibleRowCount="5">
+                    <ui:columns>
+                    <ui:Column >
+                    <Label text="Employee Name"></Label>
+                    <ui:template>
+                    <VBox >
+                    <Text text="{data>name}" visible="{=${data>edit}===true?false:true}"/>
+                    <Input id="nameInput" value="{data>name}" visible="{data>edit}"/>
+                    </VBox>
+                    </ui:template>
+                    </ui:Column>
+                    <ui:Column >
+                    <Label text="Employee ID"></Label>
+                    <ui:template>
+                    <VBox >
+                    <Text text="{data>empId}" visible="{=${data>edit}===true?false:true}"/>
+                    <Input id="idInput" value="{data>empId}" visible="{data>edit}"/>
+                    </VBox>
+                    </ui:template>
+                    </ui:Column>
+                    <ui:Column >
+                    <Label text="Employee Designation"></Label>
+                    <ui:template>
+                    <VBox >
+                    <Text text="{data>desn}" visible="{=${data>edit}===true?false:true}"/>
+                    <Input id="desnInput" value="{data>desn}" visible="{data>edit}"/>
+                    </VBox>
+                    </ui:template>
+                    </ui:Column>
+                    <ui:Column >
+                    <Label text="Date of Birth" ></Label>
+                    
+                    <ui:template>
+                    <VBox >
+                    <Text text="{data>dob}" visible="{=${data>edit}===true?false:true}"/>
+                    <Input id="dobInput" value="{data>dob}" visible="{data>edit}"/>
+                    </VBox>
+                    </ui:template>
+                    </ui:Column>
+                    <ui:Column >
+                    <Label text="Action"></Label>
+                    <ui:template>
+                    <VBox >
+                    <Button class="Reject" icon="sap-icon://delete" type="Reject" press="onDeleteRow"/>
+                    </VBox>
+                    </ui:template>
+                    </ui:Column>
+                    </ui:columns>
+                    </ui:Table> -->
+                    <VBox >
+                    <core:Fragment fragmentName="com.mvcstructure.fragments.test2" type="XML"/>
+                    </VBox>
+                    </l:Grid>
+                    
+                    
+                    
+                    </content>
+                    <footer>
+                    <OverflowToolbar >
+                    <Button text="NAvigate to View2" press="navToView2"/>
+                    </OverflowToolbar>
+                    </footer>
+                </Page>
+                <Page >
+                <content>
+                <Label  text="Page2"></Label>
+                </content>
+                </Page>
+            </pages>
+        </App>
+    <!-- </Shell> -->
+</mvc:View>

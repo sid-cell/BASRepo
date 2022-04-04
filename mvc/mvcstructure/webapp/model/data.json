@@ -1,0 +1,44 @@
+{
+    "details": {
+        "name": "Mark",
+        "empId": "INC0123",
+        "gender": "Male",
+        "document": "Aadhar"
+        ,"status":"Active"
+    },
+    "idArray": [
+        {
+            "key": "aadhar",
+            "text": "Aadhar Card"
+        },
+        {
+            "key": "licence",
+            "text": "Licence Card"
+        },
+        {
+            "key": "paan",
+            "text": "PAN  Card"
+        }
+    ],
+    "empDetails": [
+        {
+            "name": "Siddharth",
+            "empId": "180310384",
+            "desn": "SDE",
+            "dob":"10/1/1999",
+            "edit":false
+        },
+        {
+            "name": "Santosh",
+            "empId": "180310300",
+            "desn": "ASE",
+            "dob":"12/8/1956","edit":false
+        },
+        {
+            "name": "Desyna",
+            "empId": "180312384",
+            "desn": "AE",
+            "dob":"8/2/1998","edit":false
+        }
+    ]
+}

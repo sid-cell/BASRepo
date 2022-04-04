@@ -1,0 +1,76 @@
+{"EmployeeDetails":[
+
+    {
+        "empId":0,
+        "Name": "George Abraham",
+        "Department": "Products",
+        "Gender": "Male",
+        "BaseLocation": "Bangalore",
+        "AdditionalDetails": {
+            "EmergencyContact": {
+                "Name": "Shruti",
+                "Number": "123"
+            },
+            "HomeAddress": {
+                "Street": "Maple Street",
+                "FlatNo": "123",
+                "City": "Bangalore"
+            }
+        }
+    },
+    {
+        "empId":1,
+        "Name": "Shailesh Shetty",
+        "Department": "Customer Consulting",
+        "Gender": "Male",
+        "BaseLocation": "Canada",
+        "AdditionalDetails": {
+            "EmergencyContact": {
+                "Name": "Priya",
+                "Number": "000"
+            },
+            "HomeAddress": {
+                "Street": "Housing Street",
+                "FlatNo": "000",
+                "City": "Bangalore"
+            }
+        }
+    },
+    {
+        "empId":2,
+        "Name": "Shruti M Rao",
+        "Department": "Product and Industry",
+        "Gender": "Female",
+        "BaseLocation": "Bangalore",
+        "AdditionalDetails": {
+            "EmergencyContact": {
+                "Name": "xyz",
+                "Number": "111"
+            },
+            "HomeAddress": {
+                "Street": "Whitefield",
+                "FlatNo": "111",
+                "City": "Bangalore"
+            }
+        }
+    },
+    {
+        "empId":3,
+        "Name": "Sharique kamal Nasser",
+        "Department": "Products",
+        "Gender": "Male",
+        "BaseLocation": "Bangalore",
+        "AdditionalDetails": {
+            "EmergencyContact": {
+                "Name": "lmn",
+                "Number": "222"
+            },
+            "HomeAddress": {
+                "Street": "Minal Street",
+                "FlatNo": "222",
+                "City": "Bangalore"
+            }
+        }
+    }
+
+]} 

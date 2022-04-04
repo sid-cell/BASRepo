@@ -1,0 +1,30 @@
+<mvc:View
+    controllerName="booking.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content>
+                        <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+                        <List id="l1" items="{path:'data>/movies'}" class="sapUiResponsiveMargin shadow" width="95%">
+                        <CustomListItem  >
+                            <HBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" alignItems="Stretch" justifyContent="SpaceBetween" >
+                                <Label design="Bold" text="{data>name}"    />
+                                
+                                <Button type="Emphasized" text="Book Ticket"  press="onBooking" />
+                               
+                                <Button text="Info" type="Accept" class="sapUiSmallMarginEnd" press="onInfoPress"/>
+                            </HBox>
+                        </CustomListItem>
+                        </List>
+                        </VBox>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

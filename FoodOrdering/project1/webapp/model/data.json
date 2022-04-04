@@ -1,0 +1,124 @@
+{
+    "Hotels": [
+        {
+            "key": "seven",
+            "name": "Seven Hills",
+            "menu": [
+                {
+                    "name": "Biryani",
+                    "description": "",
+                    "price": 120,
+                    "count": 0
+                },
+                {
+                    "name": "Pasta",
+                    "description": "",
+                    "price": 85,
+                    "count": 0
+                },
+                {
+                    "name": "Fried Rice",
+                    "description": "",
+                    "price": 60,
+                    "count": 0
+                },
+                {
+                    "name": "Mix Veg Curry",
+                    "description": "",
+                    "price": 50,
+                    "count": 0
+                }
+            ]
+        },
+        {
+            "key": "swosti",
+            "name": "Swosti Premium",
+            "menu": [
+                {
+                    "name": "Chicken Tikka",
+                    "description": "",
+                    "price": 150,
+                    "count": 0
+                },
+                {
+                    "name": "Paneer Butter Masala",
+                    "description": "",
+                    "price": 130,
+                    "count": 0
+                },
+                {
+                    "name": "Mutton Keema",
+                    "description": "",
+                    "price": 260,
+                    "count": 0
+                },
+                {
+                    "name": "Shahi Paneer Masala",
+                    "description": "",
+                    "price": 200,
+                    "count": 0
+                }
+            ]
+        },
+        {
+            "key": "may",
+            "name": "MayFair",
+            "menu": [
+                {
+                    "name": "Spaghetti Pasta",
+                    "description": "",
+                    "price": 300,
+                    "count": 0
+                },
+                {
+                    "name": "E Fu Noodles",
+                    "description": "",
+                    "price": 210,
+                    "count": 0
+                },
+                {
+                    "name": "Bali Prawn",
+                    "description": "",
+                    "price": 350,
+                    "count": 0
+                },
+                {
+                    "name": "Chicken Popcorn",
+                    "description": "",
+                    "price": 150,
+                    "count": 0
+                }
+            ]
+        },
+        {
+            "key": "ginger",
+            "name": "Hotel Ginger",
+            "menu": [
+                {
+                    "name": "Egg Tadka",
+                    "description": "",
+                    "price": 120,
+                    "count": 0
+                },
+                {
+                    "name": "Mushroom Curry",
+                    "description": "",
+                    "price": 185,
+                    "count": 0
+                },
+                {
+                    "name": "Desi Chicken Curry",
+                    "description": "",
+                    "price": 300,
+                    "count": 0
+                },
+                {
+                    "name": "Matar Paneer",
+                    "description": "",
+                    "price": 200,
+                    "count": 0
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,62 @@
+<mvc:View
+    controllerName="booking.controller.bookMovie"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+              <Page id="page" showHeader="true" >
+                <customHeader>
+                <OverflowToolbar class="cherryworkToolbarClass" style="Standard">
+                <Label text="Online Booking" design="Bold" ></Label>
+                <ToolbarSpacer/>
+                
+                <Button icon="sap-icon://cart-4" text="Pay"></Button>
+                </OverflowToolbar>
+                </customHeader>
+                    <content>
+                	
+                        <f:SimpleForm columnsL="1"  id="idSimpleForm" editable="true" layout="ResponsiveGridLayout" title="form title">
+						<f:content >
+							<Label text="Name"/>
+							<Input value="{oFormModel>/name}" placeholder="Enter your Name" width="50%" />
+                            <Label text="City"/>
+							<Input  placeholder="" value="{oFormModel>/city}" width="25%" />
+                            <Label text="Cinema"/>
+							<Input value="{oFormModel>/cinema}" placeholder="" width="25%" />
+                            <Label text="Date"/>
+							<Input value="{oFormModel>/date}" placeholder="" width="25%" />
+                            <Label text="Show Timing"/>
+							<Input value="{oFormModel>/showtiming}" placeholder="" width="25%" />
+                            <Label text="No of Tickets"/>
+							<Input value="{oFormModel>/noOfTickets}" placeholder="" width="50%" />
+                            <ToolbarSpacer/>
+                            <Button type="Emphasized"
+                                    text="Submit"
+                                    press="onSubmit"
+                                    >
+					            <!-- <layoutData>
+						            <FlexItemData growFactor="1" />
+					            </layoutData> -->
+				            </Button>
+						</f:content>
+					</f:SimpleForm>
+
+                    
+
+                    
+                    </content>
+                    	<footer>
+					<OverflowToolbar>
+						<Button text="Navigate back" press="TOView"></Button>
+					</OverflowToolbar>
+				</footer>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

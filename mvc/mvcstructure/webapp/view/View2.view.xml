@@ -1,0 +1,26 @@
+<mvc:View
+    controllerName="com.mvcstructure.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core ="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+    xmlns:ui="sap.ui.table"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page  title="{i18n>title}">
+                    <content>
+                    <Title text="This is View2" ></Title>
+                    </content>
+                    <footer>
+                    <OverflowToolbar >
+                    <Button text="NAvigate back" press="navToView1"/>
+                    </OverflowToolbar>
+                    </footer>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
