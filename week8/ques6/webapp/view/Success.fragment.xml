@@ -1,0 +1,9 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Dialog id="success" title="Message">
+    <Label text="Successfully clicked the button for no reason" id="successid"/>
+    </Dialog>
+
+</core:FragmentDefinition>
