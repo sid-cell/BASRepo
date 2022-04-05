@@ -1,0 +1,30 @@
+<mvc:View
+    controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                
+                    <content>
+                        <HeaderContainer >
+                            <core:Fragment fragmentName="project1.fragment.header" type="XML" />
+                        </HeaderContainer>
+                        <TileContent >
+                         <core:Fragment fragmentName="project1.fragment.content" type="XML" />
+                        </TileContent>
+                            
+                         
+                    </content>
+                    <footer>
+                        <core:Fragment fragmentName="project1.fragment.footer" type="XML" />
+                    </footer>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
