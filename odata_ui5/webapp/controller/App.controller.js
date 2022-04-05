@@ -26,7 +26,7 @@ sap.ui.define([
 
                 var oPath = "/Categories" //The sPath is required for which odata we want
                 oDataModel.read(oPath,{
-                    filters:[ofilter],
+                   // filters:[ofilter],
                     success:function(oSuccess){ //oSuccess will contain the data of the particular entity(Categries in our case)
                         oLocalModel.setSizeLimit(oSuccess.results.length);
                         oLocalModel.setProperty("/results",oSuccess.results);

@@ -1,5 +1,5 @@
-<mvc:View xmlns:cards="sap.f.cards"
-    controllerName="week7.controller.View1"
+<mvc:View
+    controllerName="week7assignment.controller.App"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
@@ -8,9 +8,8 @@
         <App id="app">
             <pages>
                 <Page id="page" title="{i18n>title}">
-                    <content >
-
-                    <HBox justifyContent="Center" >
+                    <content>
+                        <HBox justifyContent="Center" >
 
                          <VBox justifyContent="Start" >
                             <Button text="Create a Label by Adding Style class" type="Emphasized" press="createLabelStyleClass" ></Button>  

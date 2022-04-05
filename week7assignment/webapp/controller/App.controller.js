@@ -1,18 +1,16 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller","sap/m/Label","sap/ui/model/json/JSONModel","sap/ui/model/odata/v2/ODataModel",
-    "sap/ui/model/Filter","sap/ui/model/FilterOperator"
+    "sap/ui/core/mvc/Controller","sap/ui/model/Filter","sap/ui/model/FilterOperator","sap/ui/model/json/JSONModel"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller,Label,JSONModel,ODataModel,Filter,FilterOperator) {
+    function (Controller,Filter,FilterOperator,JSONModel) {
         "use strict";
 
-        return Controller.extend("week7.controller.View1", {
+        return Controller.extend("week7assignment.controller.App", {
             onInit: function () {
-
-                 //Odata Binding
-                 this.getSrvData();
+                //Odata Binding
+                this.getSrvData();
 
                 
                 //JSON BInding
@@ -49,7 +47,7 @@ sap.ui.define([
 
                 var oPath = "/Categories" //The sPath is required for which odata we want
                 oDataModel.read(oPath,{
-                    filters:[ofilter],
+                   // filters:[ofilter],
                     success:function(oSuccess){ //oSuccess will contain the data of the particular entity(Categries in our case)
                         oLocalModel.setSizeLimit(oSuccess.results.length);
                         oLocalModel.setProperty("/results",oSuccess.results);
@@ -68,7 +66,6 @@ sap.ui.define([
                 lbl.addStyleClass("labelStyle");
                 lbl.placeAt("content"); 
             }
-
             
         });
     });

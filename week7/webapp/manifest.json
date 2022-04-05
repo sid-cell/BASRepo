@@ -12,12 +12,12 @@
         "resources": "resources.json",
         "dataSources": {
             "mainService": {
-                "uri": "/sap/opu/odata/",
+                "uri": "/v2/Northwind/Northwind.svc/",
                 "type": "OData",
                 "settings": {
                     "annotations": [],
                     "localUri": "localService/metadata.xml",
-                    "odataVersion": "4.0"
+                    "odataVersion": "2.0"
                 }
             }
         }
@@ -39,7 +39,7 @@
         }
     },
     "sap.ui5": {
-        "flexEnabled": true,
+        "flexEnabled": false,
         "dependencies": {
             "minUI5Version": "1.99.0",
             "libs": {
@@ -68,12 +68,16 @@
                 "dataSource": "mainService",
                 "preload": true,
                 "settings": {
+                    
                     "synchronizationMode": "None",
                     "operationMode": "Server",
                     "autoExpandSelect": true,
                     "earlyRequests": true,
                     "groupId": "$direct"
+                    
                 }
+            },"localModel":{
+                "type": "sap.ui.model.json.JSONModel"
             }
         },
         "resources": {
