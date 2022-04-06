@@ -1,0 +1,78 @@
+<mvc:View xmlns:internal="sap.landvisz.internal"
+    controllerName="week10.controller.Table"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:ui="sap.ui.table"
+     xmlns:core ="sap.ui.core"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content>
+                        
+                    <ui:Table  title="Details of Employees from OData service" id="myTable" rows="{localModel>/results}" visibleRowCount="10">
+                        <ui:columns>
+                            <ui:Column >
+                                <Label text="Employee Name"></Label>
+                                <ui:template>
+                                    <VBox >
+                                        <Text text="{localModel>FirstName}{localModel>LastName}"/>
+                                        
+                                    </VBox>
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column >
+                                <Label text="Employee ID"></Label>
+                                <ui:template>
+                                    <VBox >
+                                        <Text text="{localModel>EmployeeID}"/>
+                                    </VBox>
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column >
+                                <Label text="Employee Designation"></Label>
+                                <ui:template>
+                                    <VBox >
+                                        <Text text="{localModel>Title}"/>
+                                    </VBox>
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column >
+                                <Label text="Date of Birth" ></Label>
+                                <ui:template>
+                                    <VBox >
+                                        <Text text="{localModel>BirthDate}"/>
+                                        <!-- <Text text="{path:'localModel>dob',formatter:'.formatter.dateFormat'}" visible="{=${localModel>edit}===true?false:true}"/>
+                                        <Input id="dobInput" value="{localModel>dob}" visible="{localModel>edit}"/> -->
+                                    </VBox>
+                                </ui:template>
+                            </ui:Column>
+                            <ui:Column >
+                                <Label text="Address"></Label>
+                                <ui:template>
+                                    <VBox >
+                                        <Text text="{localModel>Address}|{localModel>City}|{localModel>Country}|{localModel>PostalCode}"/>
+                                    </VBox>
+                                </ui:template>
+                            </ui:Column>
+                            <!-- <ui:Column >
+                                <Label text="Action"></Label>
+                                <ui:template>
+                                    <VBox >
+                                        <Button class="Reject" icon="sap-icon://delete" type="Reject" press="onDeleteRow"/>
+                                    </VBox>
+                                </ui:template>
+                            </ui:Column> -->
+                        </ui:columns>
+                    </ui:Table>
+                    <VBox >
+                    <Button text="Go to Question 2" type="Emphasized" press="navToCustomerSearch"/>
+                    </VBox>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
