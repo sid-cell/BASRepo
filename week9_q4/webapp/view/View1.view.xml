@@ -1,0 +1,63 @@
+<mvc:View xmlns:cards="sap.f.cards"
+    controllerName="week9q4.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core = "sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content>
+                    
+                    <VBox class="sapUiSmallMargin" justifyContent="Center" alignContent="Center" alignItems="Center" >
+                        <ObjectHeader title="Registration Page" ></ObjectHeader>
+                        <ComboBox id="dropdown1" selectedKey="{i18n>lang}" selectionChange="changeLang">
+                            <core:Item key="English" text="English" />
+                            <core:Item key="Arabic" text="Arabic" />
+                            <core:Item key="French" text="French" />
+                        </ComboBox>
+                        <f:SimpleForm id="SimpleFormDisplay354"
+                            editable="true"
+                            layout="ResponsiveGridLayout"
+                        >
+                         <f:content>
+                         
+                         
+                                <Label id="emp_name" text="{i18n>name}"  />
+                                <Input type="Text" valueState="Information" placeholder="Enter your name"/>
+                            
+                            
+                            
+                                <Label id="emp_id" text="{i18n>employeeID}"  />
+                                <Input type="Text" valueState="Information" placeholder="Enter your Employee Id"/>
+                            
+                               
+                            
+                            
+                                <Label id="des" text="{i18n>designation}"/>
+                                <Input type="Text" valueState="Information" placeholder="Enter your Designation"/>
+                            
+                            
+                                <Label id="place" text="{i18n>place}"/>
+                                <Input type="Text" valueState="Information" placeholder="Enter your Place of Work"/>
+                            
+                            
+                                <Label id="dept" text="{i18n>department}"/>
+                                <Input type="Text" valueState="Information" placeholder="Enter your Dept"/>
+                            
+                         
+                         </f:content>  
+                            
+                        </f:SimpleForm>
+                    </VBox>
+                        
+
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
