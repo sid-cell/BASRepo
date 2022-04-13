@@ -1,0 +1,97 @@
+<mvc:View
+    controllerName="assig2.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content>
+                        <SplitApp
+                    id="SplitAppDemo"
+                    initialDetail="detail"
+                    initialMaster="master">
+                    <detailPages>
+                        <!-- <Page ></Page> -->
+                        <Page
+                            id="detail"
+                            title="Employee Details"
+                            backgroundDesign= "Solid">
+                            <VBox class="sapUiSmallMargin" >
+                                <Label text="Not found! Click on any of the Employees to See their details" />
+                            </VBox>
+                        </Page>
+                        <Page
+                            id="empdetail"
+                            title="Employee Details"
+                            backgroundDesign= "Solid"
+                            showNavButton="true"
+                            navButtonPress="onPressDetailBack"
+                            >
+                            <VBox class="sapUiSmallMargin">
+                                <items>
+                                <HBox >
+                                <Text text="Address: {/Employee>/Address} "/>
+                                <Text text="BirthDate: {/Employee>/BirthDate} "/>
+                                </HBox>
+                                <HBox >
+                                <Text text="City: {/Employee>/City} "/>
+                                <Text text="Country: {/Employee>/Country} "/>
+                                </HBox>
+                                </items>
+                                
+                            </VBox>
+                        </Page>
+                        
+                    </detailPages>
+                    <masterPages>
+                        <Page
+                            id="master"
+                            title="Employee List"
+                            backgroundDesign= "List"
+                            navButtonPress="onEmployeePress">
+                            <List items="{localModel>/empData}" itemPress="onEmployeePress" >
+                                <items>
+                                    <StandardListItem type="Navigation" title="{localModel>FirstName} {localModel>LastName}" ></StandardListItem>
+                                </items>
+                                <!-- <StandardListItem title="To Master2" type="Navigation" press=".onPressGoToMaster" /> -->
+                            </List>
+                        </Page>
+                        <!-- <Page
+                            id="master2"
+                            title="Master 2"
+                            backgroundDesign="List"
+                            showNavButton="true"
+                            navButtonPress=".onPressMasterBack">
+                            <List itemPress=".onListItemPress">
+                                <items>
+                                    <StandardListItem title="To Detail 1" type="Active" custom:to="detail" />
+                                    <StandardListItem title="To Detail 2" type="Active" custom:to="detailDetail" />
+                                    <StandardListItem title="To Detail 3" type="Active" custom:to="detail2" />
+                                </items>
+                            </List>
+                        </Page> -->
+                    </masterPages>
+                    
+                        
+                    
+                </SplitApp>
+                <Bar>
+                
+                            <contentMiddle>
+                                <Label text="Copyright SiddharthSankarNayak" design="Bold"  ></Label>
+                            </contentMiddle>
+                            <contentLeft>
+                            <Button text="Logout" type="Emphasized" press="onLogout"></Button>
+                            </contentLeft>
+                        </Bar>
+                            
+                    </content>
+                    
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
