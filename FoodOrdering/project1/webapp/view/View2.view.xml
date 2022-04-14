@@ -1,0 +1,41 @@
+<mvc:View
+    controllerName="com.project1.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+<App id="app">
+            <pages>
+                <Page showHeader="true" title="Order Details">
+                <content>
+                    <HBox class="sapUiSmallMargin">
+                        <Label text="Order Number : {data>/orderNumber}" class="sapUiTinyMarginTop"/>
+                    </HBox>
+                    <Title text="{data>/hotelName}" class="sapUiSmallMarginBegin" ></Title>
+                    <List items="{path: 'data>/selectedItems'}" class="sapUiSmallMarginBeginEnd" >
+                        <CustomListItem class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+                                <HBox justifyContent="SpaceBetween">
+                                    <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+                                        <Label text="{data>name}"/>
+                                        <Label text="{data>price}"/>
+                                    </VBox>
+                                    <VBox>
+                                        <Label text="Quantity: {data>count}"/>
+                                    </VBox>
+                                </HBox>
+                                <Label text="Total : {data>/total}"></Label>
+                        </CustomListItem>
+
+                    </List>
+                </content>
+                <footer>
+                    <OverflowToolbar >
+                        <Button text="Navigate Back" press="toView1"/>
+                    </OverflowToolbar>
+                </footer>
+                </Page>
+            </pages> 
+        </App>
+
+</mvc:View>

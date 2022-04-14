@@ -103,16 +103,28 @@
           "target": [
             "TargetView1"
           ]
-        }
+        },
+        {
+            "name": "RouteView2",
+            "pattern": "RouteView2/{order}",
+            "target": [
+              "TargetView2"
+            ]
+          }
       ],
       "targets": {
         "TargetView1": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "View1",
           "viewName": "View1"
-        }
+        },
+        "TargetView2": {
+            "viewType": "XML",
+            "transition": "fade",
+            "clearControlAggregation": false,
+            "viewName": "View2"
+          }
       }
     },
     "rootView": {

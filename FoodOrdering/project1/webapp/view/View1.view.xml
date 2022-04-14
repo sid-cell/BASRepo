@@ -5,27 +5,27 @@
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
 >
-    <Shell id="shell">
+    <!-- <Shell id="shell"> -->
         <App id="app">
             <pages>
                 <Page showHeader="true">
                     <customHeader>
-                        <OverflowToolbar style="Standard" >
-                            <Label text="FoodOrdering" design="Bold" class="sapUiTinyMarginBegin sapUiSmallMargin"/>
-                                <ToolbarSpacer/>
-                                <Button text="Show Order history" press="orderHistory" type="Accept"/>
+                        <OverflowToolbar style="Standard">
+                            <Label text="FoodOrdering" design="Bold" class="sapUiTinyMarginBegin"/>
+                            <ToolbarSpacer/>
+                                <!-- <core:Icon src="sap-icon://person-placeholder" class="iconClass sapUiSmallMargin"/> -->
+                            <Button text="Show Order history" press="orderHistory" type="Accept"/>
                         </OverflowToolbar>
                     </customHeader>
                     <content>
-                        <HBox justifyContent="SpaceBetween" >
-                            <Label text="Please Select Hote
-                            \    " class="sapUiTinyMarginTop"/>
-                            <ComboBox items="{path:'data>/Hotels'}" selectedKey="/selectedHotel" >
+                        <HBox>
+                            <Label text="Please Select Hotel :" class="sapUiSmallMarginBeginEnd sapUiTinyMarginTop"/>
+                            <ComboBox items="{path:'data>/Hotels'}" selectedKey="data>/selectedHotel" selectionChange="onSelectHotel" >
                                 <core:Item key="{data>key}" text="{data>name}"/>
                             </ComboBox>
                         </HBox>
                         <VBox >
-                            <List headerText="Menu Items" items="{path:'data>/menu'}">
+                            <List headerText="Menu" items="{path:'data>/menu'}">
                                 <CustomListItem class="sapUiSmallMarginBeginEnd sapUiSmallMarginTop">
                                     <HBox justifyContent="SpaceBetween" >
                                         <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
@@ -33,15 +33,22 @@
                                             <Label text="{data>price}"/>
                                         </VBox>
                                         <VBox>
-                                            <StepInput value="{data>count}" min="0" max="10" step="1" change="onChange"/>
+                                            <StepInput value="{data>count}" min="0" max="10" step="1" change="onQuantityChange"/>
                                         </VBox>
                                     </HBox>
                                 </CustomListItem>
                             </List>
                         </VBox>
                     </content>
+                    <footer>
+                        <OverflowToolbar >
+                            <Label text="Total :{data>/total}" class="sapUiSmallMargin"/>
+                            <ToolbarSpacer/>
+                            <Button text="Submit" press="openDialog" type="Emphasized"/>
+                        </OverflowToolbar>
+                    </footer>
                 </Page>
-            </pages>
+            </pages> 
         </App>
-    </Shell>
+    <!-- </Shell> -->
 </mvc:View>

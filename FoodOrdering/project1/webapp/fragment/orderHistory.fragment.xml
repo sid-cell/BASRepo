@@ -1,0 +1,23 @@
+<core:FragmentDefinition 
+xmlns="sap.m"
+xmlns:core="sap.ui.core">
+
+<Dialog title="Order History" type="Message">
+    <List items="{path:'data>/orderHistory'}">
+        <CustomListItem class="sapUiSmallMarginTop sapUiSmallMarginBeginEnd" >
+            <HBox justifyContent="SpaceBetween" >
+                <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom">
+                    <Label text="{data>hotelName}"></Label>
+                    <Label text ="{data>string}"/>
+                </VBox>
+            </HBox> 
+        </CustomListItem>
+    </List>
+
+    <Label text="{data>/total}" class="sapUiSmallMargin"/>
+    <buttons>
+        <Button text="Cancel" press="cancelHistory" type="Ghost" ></Button>
+        <Button text="Submit" press="toView2" type="Emphasized" ></Button>
+    </buttons>
+</Dialog>
+</core:FragmentDefinition>
