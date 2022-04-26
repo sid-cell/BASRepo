@@ -16,6 +16,8 @@
                                 <Label design="Bold" text="{data>name}"    />
                                 
                                 <Button type="Emphasized" text="Book Ticket"  press="onBooking" />
+
+                                <Label text="No of Tickets:{data>noOfTickets}" design="Bold"/>
                                
                                 <Button text="Info" type="Accept" class="sapUiSmallMarginEnd" press="onInfoPress"/>
                             </HBox>

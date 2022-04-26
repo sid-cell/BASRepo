@@ -12,12 +12,12 @@
     "resources": "resources.json",
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/",
+        "uri": "/v2/Northwind/Northwind.svc",
         "type": "OData",
         "settings": {
           "annotations": [],
           "localUri": "localService/metadata.xml",
-          "odataVersion": "4.0"
+          "odataVersion": "2.0"
         }
       }
     }
@@ -64,6 +64,9 @@
           "bundleName": "assignment2.i18n.i18n"
         }
       },
+      "localModel":{
+          "type": "sap.ui.model.json.JSONModel"
+      },
       "": {
         "dataSource": "mainService",
         "preload": true,
@@ -100,15 +103,28 @@
           "target": [
             "TargetLogin"
           ]
-        }
+        },
+        {
+            "name": "RouteSplitApp",
+            "pattern": "RouteSplitApp",
+            "target": [
+              "TargetSplitApp"
+            ]
+          }
       ],
       "targets": {
         "TargetLogin": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "Login",
           "viewName": "Login"
+        },
+        "TargetSplitApp":{
+            "viewType": "XML",
+            "viewName": "SplitApp",
+            "clearControlAggregation": false,
+            "transition":"fade"
+
         }
       }
     },

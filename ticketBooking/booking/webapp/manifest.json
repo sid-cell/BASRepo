@@ -109,7 +109,7 @@
         },
         {
             "name": "RoutebookMovie",
-            "pattern": "RoutebookMovie",
+            "pattern": "RoutebookMovie/{movieName}",
             "target":"TargetbookMovie"
         },
         {

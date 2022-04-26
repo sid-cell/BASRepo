@@ -27,13 +27,19 @@
                             <Label text="City"/>
 							<Input  placeholder="" value="{oFormModel>/city}" width="25%" />
                             <Label text="Cinema"/>
-							<Input value="{oFormModel>/cinema}" placeholder="" width="25%" />
+							<Input value="{oFormModel>/cinema}" placeholder="{oFormModel>/cinema}" width="25%" />
                             <Label text="Date"/>
-							<Input value="{oFormModel>/date}" placeholder="" width="25%" />
+                            <DateTimePicker
+                                id="DTP1"
+                                placeholder="Enter Date"
+                                
+                                class="sapUiSmallMarginBottom"
+                                value="{oFormModel>/date}"/>
+							<!-- <Input value="{oFormModel>/date}" placeholder="" width="25%" />
                             <Label text="Show Timing"/>
-							<Input value="{oFormModel>/showtiming}" placeholder="" width="25%" />
+							<Input value="{oFormModel>/showtiming}" placeholder="" width="25%" /> -->
                             <Label text="No of Tickets"/>
-							<Input value="{oFormModel>/noOfTickets}" placeholder="" width="50%" />
+							<Input value="{oFormModel>/noOfTickets}" placeholder="" type="Number" width="50%" />
                             <ToolbarSpacer/>
                             <Button type="Emphasized"
                                     text="Submit"
@@ -43,6 +49,7 @@
 						            <FlexItemData growFactor="1" />
 					            </layoutData> -->
 				            </Button>
+                            
 						</f:content>
 					</f:SimpleForm>
 

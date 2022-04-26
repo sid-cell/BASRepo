@@ -1,11 +1,6 @@
 {
-   "folders": [
-      {
-         "path": "mvc"
-      },
-      {
-         "path": ""
-      }
-   ],
-   "settings": {}
+      "folders": [{
+        "path": "file:///home/user/projects/Test" 
+      }],
+      "settings": {}
 }

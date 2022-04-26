@@ -12,7 +12,7 @@ sap.ui.define([
 
             },
             onLoginTap: function(){
-                
+                this.getOwnerComponent().getRouter().navTo("RouteSplitApp");
             }
         });
     });

@@ -14,7 +14,8 @@ sap.ui.define([
             onInfoPress : function (oEvent) {
                 
                 var oModel = this.getView().getModel("data");
-                var desc = oModel.oData.movies[parseInt(oEvent.getSource().getBindingContext("data").sPath.split("/").pop())].desc
+                var movieIndex = parseInt(oEvent.getSource().getBindingContext("data").sPath.split("/").pop());
+                var desc = oModel.oData.movies[movieIndex].desc
                 //MessageToast.show(desc);
                 const oTextModel = new JSONModel({
                     movieDesc: desc,
@@ -29,8 +30,20 @@ sap.ui.define([
                     this.onMovieInfo.open();
                 
             },
-            onBooking: function(){
-                this.getOwnerComponent().getRouter().navTo("RoutebookMovie");
+            onBooking: function(oEvent){
+                
+                // var movieIndex = parseInt(oEvent.getSource().getBindingContext("data").sPath.split("/").pop());
+                var movieObject = oEvent.getSource().getBindingContext("data").getObject();
+                var mName = movieObject.name;
+                // debugger;
+
+                // this.getOwnerComponent().getRouter().navTo("RoutebookMovie",{
+                //     toMovie:movieIndex
+                // });
+
+                this.getOwnerComponent().getRouter().navTo("RoutebookMovie",{
+                    movieName: mName
+                });
             }
         });
     });

@@ -65,9 +65,9 @@
                     <ObjectListItem
                         type="Navigation"
                         press=".onSelectionChange"
-                        title="{OrderDate}"
+                        title="{CustomerID}"
                         
-                        unit="{ShipAddress}"
+                        
                         />
                 </items>
             </List>

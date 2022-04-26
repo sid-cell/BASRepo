@@ -9,21 +9,21 @@
         busy="{detailView>/busy}"
         busyIndicatorDelay="{detailView>/delay}">
         <semantic:titleHeading>
-            <Title
-                text="{OrderDate}"
+         <Title
+                text="{ShipCity}"
                 level="H2"/>
         </semantic:titleHeading>
         <semantic:headerContent>
             <ObjectAttribute title="{i18n>priceTitle}"/>
             <ObjectNumber
-                unit="{ShipAddress}" />
+                unit="{Freight}" />
         </semantic:headerContent>
         <semantic:content>
 
             <Table
                 id="lineItemsList"
                 width="auto"
-                items="{Employees}"
+                items="{OrderID}"
                 updateFinished=".onListUpdateFinished"
                 noDataText="{i18n>detailLineItemTableNoDataText}"
                 busyIndicatorDelay="{detailView>/lineItemTableDelay}">
@@ -55,10 +55,10 @@
                                 text="{EmployeeID}"/>
                             <ObjectNumber
                                 number="{
-                                    path: 'ReportsTo',
+                                    path: 'ShipVia',
                                     formatter: '.formatter.currencyValue'
                                 }"
-                                unit="{Country}" />
+                                unit="{Freight}" />
                         </cells>
                     </ColumnListItem>
                 </items>

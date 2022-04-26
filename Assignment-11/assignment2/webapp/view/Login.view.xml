@@ -1,4 +1,4 @@
-<mvc:View
+<mvc:View xmlns:form="sap.ui.layout.form"
     controllerName="assignment2.controller.Login"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
@@ -9,22 +9,29 @@
             <!-- <pages> -->
                 <Page  id="page" title="{i18n>title}" >
                     <content>
-                        <VBox backgroundDesign="Transparent" fitContainer="true" justifyContent="Center" alignItems="Center" alignContent="Center">
+                        <VBox  backgroundDesign="Transparent" fitContainer="true" justifyContent="Center" alignItems="Center" alignContent="Center">
                             <items>
-                                <Input id="uid" placeholder="UserID"></Input>
+                                <!-- <Input id="uid" placeholder="UserID"></Input>
                                 <Input id="pwd" placeholder="Password" type="Password"></Input>
-                                <Button width="11rem" text="Login" type="Emphasized" press="onLoginTap"></Button>
+                                <Button width="11rem" text="Login" type="Emphasized" press="onLoginTap"></Button> -->
+                                
+                                    <form:SimpleForm editable="true" layout="ResponsiveLayout">
+                                        <Label text="{i18n>userId}"/>
+                                        <Input value="{/userId}" valueLiveUpdate="true" width="200px" />
+                                        <Label text="{i18n>password}"/>
+                                        <Input value="{/password}" valueLiveUpdate="true" width="200px"/>
+                                        <Button type="Emphasized" text="Login" press="onLoginTap" ></Button>
+                                    </form:SimpleForm>
+                                
                             </items>
                          </VBox>
                     </content>
                     <footer >
                         <Bar>
-                            <contentLeft>
-                                <Text text="techippo"></Text>
-                            </contentLeft>
-                            <contentRight>
-                                <Text text="myLogin"></Text>
-                            </contentRight>
+                
+                            <contentMiddle>
+                                <Label text="Copyright SiddharthSankarNayak" design="Bold"  ></Label>
+                            </contentMiddle>
                         </Bar>
                     </footer>
                 </Page>

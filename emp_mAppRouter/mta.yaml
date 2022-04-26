@@ -1,0 +1,103 @@
+_schema-version: "3.2"
+ID: emp_mAppRouter
+description: Corrected app for launchpad
+version: 0.0.1
+modules:
+- name: emp_mAppRouter-dest-content
+  type: com.sap.application.content
+  requires:
+  - name: emp_mAppRouter-destination-service
+    parameters:
+      content-target: true
+  - name: emp_mAppRouter-repo-host
+    parameters:
+      service-key:
+        name: emp_mAppRouter-repo-host-key
+  - name: emp_mAppRouter-uaa
+  - name: emp_mAppRouter-theming
+    parameters:
+      service-key:
+        name: emp_mAppRouter-uaa-key
+  parameters:
+    content:
+      instance:
+        destinations:
+        - Name: emp_mAppRouter_repo_host
+          ServiceInstanceName: emp_mAppRouter-html5-srv
+          ServiceKeyName: emp_mAppRouter-repo-host-key
+          sap.cloud.service: emp_mAppRouter
+        - Authentication: OAuth2UserTokenExchange
+          Name: emp_mAppRouter_uaa
+          ServiceInstanceName: emp_mAppRouter-xsuaa-srv
+          ServiceKeyName: emp_mAppRouter-uaa-key
+          sap.cloud.service: emp_mAppRouter
+        existing_destinations_policy: update
+  build-parameters:
+    no-source: true
+- name: emp_mAppRouter-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  
+  - name: emp_mAppRouter-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - comempnorthwind.zip
+      name: comempnorthwind
+      target-path: resources/
+- name: comempnorthwind
+  type: html5
+  path: emp_northwind
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: emp_mAppRouter-uaa
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: emp_mAppRouter-xsuaa-srv
+    service-plan: application
+- name: emp_mAppRouter-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: true
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: emp_mAppRouter-destination-service
+    service-plan: lite
+- name: emp_mAppRouter-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: emp_mAppRouter-html5-srv
+    service-plan: app-host
+- name: emp_mAppRouter-theming
+  type: org.cloudfoundry.managed-service
+  parameters: 
+    service: theming
+    service-plan: standard
+ 
+    
+  
+parameters:
+  deploy_mode: html5-repo
