@@ -22,7 +22,7 @@ sap.ui.define([
                 var oRouter = this.getOwnerComponent().getRouter();
                 oRouter.getRoute("RoutebookMovie").attachMatched(this._onRouteMatched,this);
                 
-                oFormModel.setProperty("/cinema",movName); //edit 1
+                //oFormModel.setProperty("/cinema",movName); //edit 1
 
 
                 // var oRouter = this.getOwnerComponent().getRouter();
@@ -36,6 +36,10 @@ sap.ui.define([
                 var oModel = this.getView().getModel("data");
                 var oArgs = oEvent.getParameter("arguments");
                 var movieName = oArgs.movieName;
+
+                var ofrmModel = this.getView().getModel("oFormModel"); 
+                ofrmModel.setProperty("/cinema",movieName);
+
                 
                 
                 
@@ -78,10 +82,21 @@ sap.ui.define([
 
                 var odataModel =  this.getView().getModel("data");
                 var movies = odataModel.getProperty("/movies");
-                debugger;
+                var i=0;
+                var count = 0;
+                
                 movies.filter(function (item) {
-                    if(item.name === movName){
-                        item.noOfTickets -= oDetailsModel.tickets; 
+                    if(item.name === oDetailsModel.oData.userCinema){
+                        count =1;
+                        // odataModel.setProperty(`'/movies/'${item.noOfTickets}`,item.noOfTickets-oDetailsModel.tickets);
+                        // item.noOfTickets -= oDetailsModel.tickets;
+                        // odataModel.setProperty() 
+                        odataModel.setProperty(`/movies/${i}/noOfTickets`,item.noOfTickets -oDetailsModel.oData.tickets);
+                        odataModel.refresh();
+                        
+                    }else{
+                        if(count==0)
+                            i++;
                     }
                 });
                 
@@ -91,6 +106,7 @@ sap.ui.define([
 
                 // debugger;
                 // Object.entries(movie).forEach(([key,value]) => {
+                //     debugger;
                 //     if(key==="noOfTickets"){
                 //         movie.noOfTickets = 100 - oDetailsModel.oData.tickets; 
                 //     }
@@ -102,12 +118,12 @@ sap.ui.define([
                
 
 
-               Object.entries(odataModel.oData.movies[0]).forEach(([key,value]) => { 
-                if(key==="noOfTickets"){
-                    var ticketsPresent = odataModel.oData.movies[0].noOfTickets;
-                   odataModel.oData.movies[0].noOfTickets = ticketsPresent - oDetailsModel.oData.tickets;
-                }
-            });
+            //    Object.entries(odataModel.oData.movies[0]).forEach(([key,value]) => { 
+            //     if(key==="noOfTickets"){
+            //         var ticketsPresent = odataModel.oData.movies[0].noOfTickets;
+            //        odataModel.oData.movies[0].noOfTickets = ticketsPresent - oDetailsModel.oData.tickets;
+            //     }
+            // });
 
             
                 /**Object.entries(odataModel.oData.movies[0]).forEach(([key, value]) => {
@@ -123,4 +139,4 @@ sap.ui.define([
             // }
 
         });
-    });
+});
